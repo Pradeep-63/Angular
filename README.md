@@ -59,6 +59,7 @@ This project is a role-based authentication system with login, registration, and
 **3.Middleware:**
 
 * authMiddleware.js checks the user’s token, verifies it, and passes the user role to the controller to show the appropriate dashboard.
+
 **4.Role-Based Dashboards:**
 
 * Once authenticated, users are redirected to a dashboard based on their role:
