@@ -56,6 +56,7 @@ This project is a role-based authentication system with login, registration, and
 **2.Registration Page:**
 
 * Users can register by providing their name, email, password, and selecting a role (student, instructor, or admin).
+
 **3.Middleware:**
 
 * authMiddleware.js checks the user’s token, verifies it, and passes the user role to the controller to show the appropriate dashboard.
