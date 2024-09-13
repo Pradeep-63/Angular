@@ -1,0 +1,247 @@
+<!-- 
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card bg-light">
+              <div class="text-center">
+                  <h3 class="mt-3">Registration Form</h3>
+              </div>
+              <form #newForm="ngForm" (ngSubmit)="onSave(newForm)" novalidate>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="name" class="form-label">Name</label>
+                          <input type="text" class="form-control form-control-lg shadow-sm" id="name" [(ngModel)]="user.name" name="name" placeholder="Enter your Name" ngModel #name="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$"  (keypress)="preventInvalidCharacters($event)">
+                          <span *ngIf="name.invalid && (name.dirty || name.touched)">
+                              <span class="text-danger" *ngIf="name.hasError('required')">Name is required</span>
+                              <span class="text-danger" *ngIf="name.hasError('pattern')">Please enter a valid name</span>
+                          </span>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <label for="fname" class="form-label">Fathers Name</label>
+                          <input type="text" class="form-control form-control-lg shadow-sm" id="fname" [(ngModel)]="user.fatherName" name="fname" placeholder="Enter your Father's Name" ngModel #fname="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$"  (keypress)="preventInvalidCharacters($event)">
+                          <span *ngIf="fname.invalid && (fname.dirty || fname.touched)">
+                              <span class="text-danger" *ngIf="fname.hasError('required')">Name is required</span>
+                              <span class="text-danger" *ngIf="fname.hasError('pattern')">Please enter a valid name</span>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control form-control-lg shadow-sm" name="email" #mail="ngModel" [(ngModel)]="user.email" id="email" placeholder="Enter your Email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@[a-zA-Z0-9-]{5,12})+(?:\.[a-zA-Z]{2,3})+$" (ngModelChange)="onEmailChange()">
+                          <span *ngIf="mail.invalid && (mail.dirty || mail.touched)">
+                              <span class="text-danger" *ngIf="mail.hasError('required')">Email is required</span>
+                              <span class="text-danger" *ngIf="mail.hasError('pattern')">Please enter a valid email</span>
+                          </span>
+                          <span class="text-danger">{{msg}}</span>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <label for="class" class="form-label">Class</label>
+                          <input type="text" class="form-control form-control-lg shadow-sm" id="class" [(ngModel)]="user.Class" name="class" placeholder="Enter your Class" ngModel #class="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$">
+                          <span *ngIf="class.invalid && (class.dirty || class.touched)">
+                              <span class="text-danger" *ngIf="class.hasError('required')">Class is required</span>
+                              <span class="text-danger" *ngIf="class.hasError('pattern')">Please enter a valid class</span>
+                          </span>
+                      </div>
+                  </div>
+                  <div class="row">
+                      <div class="col-md-6 mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control form-control-lg shadow-sm" #pass="ngModel" [(ngModel)]="user.password" id="password" name="password" placeholder="Enter your Password" ngModel required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                          <div *ngIf="pass.invalid && (pass.dirty || pass.touched)">
+                              <div class="text-danger" *ngIf="pass.hasError('required')">Password is required</div>
+                              <div class="text-danger" *ngIf="pass.hasError('pattern')">Please enter a strong password</div>
+                          </div>
+                      </div>
+                      <div class="col-md-6 mb-3">
+                          <label for="role" class="form-label">Role</label>
+                          <select id="role" name="role" [(ngModel)]="user.role" #role="ngModel" required class="form-control form-control-lg shadow-sm">
+                              <option value="" disabled selected>Select a role</option>
+                              <option value="instructor">Instructor</option>
+                              <option value="student">Student</option>
+                              <option value="admin">Admin</option>
+                          </select>
+                          <div *ngIf="role.invalid && (role.dirty || role.touched)">
+                              <div class="text-danger" *ngIf="role.hasError('required')">Please select a role</div>
+                          </div>
+                      </div>
+                  </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="fileUpload" class="form-label">Upload File </label>
+                      <input type="file" class="form-control" name="file"  id="fileUpload" (change)="onFileSelected($event)">
+                     
+                  </div>
+                  <div class="d-flex justify-content-center mb-3">
+                      <button type="submit" class="btn btn-primary btn-lg shadow">Register</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div> -->
+<!-- old version code -->
+<!-- <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10 col-12">
+        <div class="card bg-light">
+          <div class="card-body">
+            <div class="text-center mb-4">
+              <h3>Registration Form</h3>
+            </div>
+            <form #newForm="ngForm" (ngSubmit)="onSave(newForm)" novalidate>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control form-control-lg shadow-sm" id="name" [(ngModel)]="user.name" name="name" placeholder="Enter your Name" ngModel #name="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$" (keypress)="preventInvalidCharacters($event)">
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+                    <div *ngIf="name.hasError('required')">Name is required</div>
+                    <div *ngIf="name.hasError('pattern')">Please enter a valid name</div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="fname" class="form-label">Father's Name</label>
+                  <input type="text" class="form-control form-control-lg shadow-sm" id="fname" [(ngModel)]="user.fatherName" name="fname" placeholder="Enter your Father's Name" ngModel #fname="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$" (keypress)="preventInvalidCharacters($event)">
+                  <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="text-danger">
+                    <div *ngIf="fname.hasError('required')">Father's Name is required</div>
+                    <div *ngIf="fname.hasError('pattern')">Please enter a valid name</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control form-control-lg shadow-sm" name="email" #mail="ngModel" [(ngModel)]="user.email" id="email" placeholder="Enter your Email" ngModel required pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+(@[a-zA-Z0-9-]{5,12})+(?:\.[a-zA-Z]{2,3})+$" (ngModelChange)="onEmailChange()">
+                  <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="text-danger">
+                    <div *ngIf="mail.hasError('required')">Email is required</div>
+                    <div *ngIf="mail.hasError('pattern')">Please enter a valid email</div>
+                  </div>
+                  <div class="text-danger">{{msg}}</div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="class" class="form-label">Class</label>
+                  <input type="text" class="form-control form-control-lg shadow-sm" id="class" [(ngModel)]="user.Class" name="class" placeholder="Enter your Class" ngModel #class="ngModel" required pattern="^[a-zA-Z]{2,}(?:[ '-][a-zA-Z]{2,}){0,5}$">
+                  <div *ngIf="class.invalid && (class.dirty || class.touched)" class="text-danger">
+                    <div *ngIf="class.hasError('required')">Class is required</div>
+                    <div *ngIf="class.hasError('pattern')">Please enter a valid class</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <input type="password" class="form-control form-control-lg shadow-sm" #pass="ngModel" [(ngModel)]="user.password" id="password" name="password" placeholder="Enter your Password" ngModel required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+                  <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="text-danger">
+                    <div *ngIf="pass.hasError('required')">Password is required</div>
+                    <div *ngIf="pass.hasError('pattern')">Please enter a strong password</div>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="role" class="form-label">Role</label>
+                  <select id="role" name="role" [(ngModel)]="user.role" #role="ngModel" required class="form-control form-control-lg shadow-sm">
+                    <option value="" disabled selected>Select a role</option>
+                    <option value="instructor">Instructor</option>
+                    <option value="student">Student</option>
+                    <option value="admin">Admin</option>
+                  </select>
+                  <div *ngIf="role.invalid && (role.dirty || role.touched)" class="text-danger">
+                    <div *ngIf="role.hasError('required')">Please select a role</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="fileUpload" class="form-label">Upload File</label>
+                  <input type="file" class="form-control" name="file" id="fileUpload" (change)="onFileSelected($event)">
+                </div>
+              </div>
+              <div class="text-center mb-3">
+                <button type="submit" class="btn btn-primary btn-lg shadow">Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- new stylish form -->
+  <div class="wrapper">
+    <div class="logo">
+        <img src="/assets/images/image.jpg" alt="Logo"> 
+    </div>
+    <div class="name text-center mb-4">
+        Registration Form
+    </div>
+    <form #newForm="ngForm" (ngSubmit)="onSave(newForm)" novalidate>
+        <div class="form-field">
+            <input type="text" id="name" [(ngModel)]="user.name" name="name" placeholder="Enter your Name" ngModel #name="ngModel" required pattern="^[a-zA-Z]{3,30}(?:[ '-][a-zA-Z]{2,}){0,5}$" (keypress)="preventInvalidCharacters($event)" >
+        </div>
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-danger">
+            <div *ngIf="name.hasError('required')">Name is required</div>
+            <div *ngIf="name.hasError('pattern')">Please enter a valid name</div>
+        </div>
+
+        <div class="form-field">
+            <input type="text" id="fname" [(ngModel)]="user.fatherName" name="fname" placeholder="Enter your Father's Name" ngModel #fname="ngModel" required pattern="^[a-zA-Z]{3,30}(?:[ '-][a-zA-Z]{2,}){0,5}$" (keypress)="preventInvalidCharacters($event)" >
+        </div>
+        <div *ngIf="fname.invalid && (fname.dirty || fname.touched)" class="text-danger">
+            <div *ngIf="fname.hasError('required')">Father's Name is required</div>
+            <div *ngIf="fname.hasError('pattern')">Please enter a valid name</div>
+        </div>
+
+        <div class="form-field">
+          <input type="email" id="email" [(ngModel)]="user.email" name="email" placeholder="Enter your Email"
+       ngModel #mail="ngModel" required
+       pattern="^(([a-zA-Z0-9]+([.!#$%&'*+/=?^_`{|}~-]?[a-zA-Z0-9]+)*)|('.+'))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(((?!\d)[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,3}))$"
+       (ngModelChange)="onEmailChange()">
+
+   
+        </div>
+        <div *ngIf="mail.invalid && (mail.dirty || mail.touched)" class="text-danger">
+            <div *ngIf="mail.hasError('required')">Email is required</div>
+            <div *ngIf="mail.hasError('pattern')">Please enter a valid email</div>
+        </div>
+        <div class="text-danger">{{msg}}</div>
+
+        <div class="form-field">
+            <input type="text" id="class" [(ngModel)]="user.Class" name="class" placeholder="Enter your Class" ngModel #class="ngModel" required pattern="^[a-zA-Z0-9]{2,20}(?:[ '-][a-zA-Z]{2,}){0,5}$">
+           
+        </div>
+        <div *ngIf="class.invalid && (class.dirty || class.touched)" class="text-danger">
+            <div *ngIf="class.hasError('required')">Class is required</div>
+            <div *ngIf="class.hasError('pattern')">Please enter a valid class</div>
+        </div>
+
+        <div class="form-field">
+            <input type="password" id="password" [(ngModel)]="user.password" name="password" placeholder="Enter your Password" ngModel #pass="ngModel" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$">
+            
+        </div>
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="text-danger">
+            <div *ngIf="pass.hasError('required')">Password is required</div>
+            <div *ngIf="pass.hasError('pattern')">Please enter a strong password</div>
+        </div>
+
+        <div class="form-field">
+            <select id="role" name="role" [(ngModel)]="user.role" #role="ngModel" required>
+                <option value="" disabled>Select a role</option>
+                <option value="instructor">Instructor</option>
+                <option value="student" selected>Student</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div *ngIf="role.invalid && (role.dirty || role.touched)" class="text-danger">
+            <div *ngIf="role.hasError('required')">Please select a role</div>
+        </div>
+        <div class="form-field">
+            <input type="file" id="fileUpload" name="file" (change)="onFileSelected($event)">
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn">Register</button>
+        </div>
+        <div class="text-center mt-2">
+           <span>Already have an account?</span>
+           <a routerLink="/login" style="text-decoration: none;" > Login</a>
+      </div>
+    </form>
+</div>
+
+  

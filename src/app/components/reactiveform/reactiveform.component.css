@@ -1,0 +1,146 @@
+/* .card{
+    margin-top: 10px;
+    border: none;
+    padding: 40px 200px;
+    position: absolute;
+    top: 50%;
+    border-radius: 20px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: hsla(205,46%,30%,1);
+    background: linear-gradient(98deg,rgb(149, 87, 169)0%,rgb(70, 41, 123)100%);
+    border-radius: 10px;
+   
+}
+.card h1{
+  color: #fff;
+}
+label{
+    color: #fff;
+}
+.text-danger{
+  font-weight: bold;
+}
+
+input{
+    height: 40px;
+    width: 99%;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+ label{
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    margin: 5px 0px;
+}
+::placeholder{
+  color: black;
+  font-size: 17px;
+} */
+ /* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+/* Reseting */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #ecf0f3;
+}
+
+.wrapper {
+    max-width: 500px;
+    margin: 80px auto;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 1px 13px 200px #cbced1, -13px -13px 20px #fff;
+}
+
+.logo {
+    width: 80px;
+    margin: auto;
+}
+
+.logo img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaa7,
+        -8px -8px 15px #fff;
+}
+
+.name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    color: #555;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.form-field label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-field input,
+.form-field select {
+    width: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px;
+}
+
+.form-field input[type="file"] {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.text-danger {
+    color: #e74c3c;
+}
+
+.btn {
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px #b1b1b1,
+        -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
+    border: none;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: #039BE5;
+}
+
+@media(max-width: 380px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px;
+    }
+}

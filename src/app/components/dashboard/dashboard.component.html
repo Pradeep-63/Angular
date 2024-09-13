@@ -1,0 +1,128 @@
+<!-- <div class="container">
+   <div class="wrapper ">
+    <div class="row d-flex">
+      <div class="col-4 ">
+        <div>
+          <img [src]="avatarSrc" style="width: 200px; height: 200px; object-fit: cover; cursor: pointer;" alt="example placeholder" />
+        </div>
+        <div>
+          <input type="text" disabled class="mt-5" [(ngModel)]="profile.rollNumber" >
+        </div>
+      </div>
+      <div class="col-8">
+          <div>
+            <div class="row">
+                <div class="col-md-7 form-container">
+                        <div class="form-group row mb-2">
+                            <label for="name" class="col-md-4 col-form-label">Name</label>
+                            <div class="col-md-8 ">
+                                <input type="text" class="form-control" id="name" [(ngModel)]="profile.name" placeholder="Enter your name" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="fatherName" class="col-md-4 col-form-label">Father's Name</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="fatherName" [(ngModel)]="profile.fatherName" placeholder="Enter your father's name" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="class" class="col-md-4 col-form-label">Class</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="class" [(ngModel)]="profile.class" placeholder="Enter your class" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group row mb-2">
+                            <label for="email" class="col-md-4 col-form-label">Email</label>
+                            <div class="col-md-8">
+                                <input type="text" class="form-control" id="email" [(ngModel)]="profile.email" placeholder="Enter your email" disabled>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-flex justify-content-center" style="position: relative;
+        top: 70px;
+        right: 95px">
+          <img src="/assets/images/signature.png" alt="signature" style="height: 3.5rem; width: 20rem; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+   
+   </div>
+</div>
+
+ -->
+<!-- new form update -->
+<div class="container">
+  <div class="card p-5" style="border: 2px solid black; border-radius: 10px; width: 1072px;" >
+    <div class="row">
+      <!-- Left Side: Profile Image and Roll Number -->
+      <div class="col-5">
+        <div class="d-flex flex-column align-items-center">
+          <!-- Profile Image -->
+          <img [src]="avatarSrc || '/assets/images/profile-placeholder.png'" 
+               style="width: 300px; height: 300px; object-fit: cover; border: 2px solid black; cursor: pointer;" 
+               alt="Profile Image" />
+          <!-- Roll Number -->
+          <input type="text" class="form-control " [(ngModel)]="profile.rollNumber" disabled style="font-size: 1.5rem;margin-top: 95px; width: 22rem;border:none;">
+          <span style="position: relative;
+    bottom: 12px;"><strong>---------------------------------------------------------------</strong></span>
+          <label for="" style="    position: relative;
+           font-weight: bold;
+           font-size: 32px;
+           bottom: 22px;">Roll No</label>
+        </div>
+      </div>
+
+      <!-- Right Side: Form Fields -->
+      <div class="col-7">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="form-group row mb-4">
+              <label for="name" class="col-md-4 col-form-label" style="font-size: 1.5rem;">Name</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="name" [(ngModel)]="profile.name" 
+                       placeholder="Enter your name" disabled style="font-size: 1.3rem;">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label for="fatherName" class="col-md-4 col-form-label" style="font-size: 1.5rem;">Father's Name</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="fatherName" [(ngModel)]="profile.fatherName" 
+                       placeholder="Enter father's name" disabled style="font-size: 1.3rem;">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label for="class" class="col-md-4 col-form-label" style="font-size: 1.5rem;">Class</label>
+              <div class="col-md-8">
+                <input type="text" class="form-control" id="class" [(ngModel)]="profile.class" 
+                       placeholder="Enter your class" disabled style="font-size: 1.3rem;">
+              </div>
+            </div>
+            <div class="form-group row mb-4">
+              <label for="email" class="col-md-4 col-form-label" style="font-size: 1.5rem;">Email</label>
+              <div class="col-md-8">
+                <input type="email" class="form-control" id="email" [(ngModel)]="profile.email" 
+                       placeholder="Enter your email" disabled style="font-size: 1.3rem;">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="row" style="margin-top: 130px;">
+          <div class="col text-center" style="display: flex;justify-content: right;">
+            <img src="/assets/images/signaturelogo.png" alt="Signature" style="height: 5rem; width: 25rem; object-fit: cover;">
+          </div>
+          <span style="    position: relative;
+    left: 205px"><strong>-----------------------------------------------------------------</strong></span>
+          <label for="signature" style="    position: relative;
+          left: 304px;
+          font-size: 32px;
+          top: -11px"><strong>Signature</strong></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
