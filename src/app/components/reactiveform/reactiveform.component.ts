@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router, RouterLink } from '@angular/router';
 import { PreventCharactersService } from '../../services/preventCharacterService/prevent-characters.service';
+import { UserService } from '../../services/users/user.service';
  
 @Component({
   selector: 'app-reactiveform',
@@ -28,7 +29,7 @@ export class ReactiveformComponent {
   }
   userData:any | null=null
   //constructor
-  constructor(private http:HttpClient,private toaster:ToastrService,private router:Router,private invalid:PreventCharactersService){
+  constructor(private http:HttpClient,private toaster:ToastrService,private router:Router,private invalid:PreventCharactersService,private signup:UserService){
   }
 
   public msg:any | null=null
@@ -64,19 +65,19 @@ export class ReactiveformComponent {
       if (this.selectedFile) {
         formData.append('file', this.selectedFile, this.selectedFile.name);
       }
+
+    this.signup.getSingup(formData).subscribe((response:any)=>{
+      if(response.data){
+       this.userData=response.data
+       console.log(this.userData);
+       this.toaster.success("user registered successfully","success")
+      }
+     this.router.navigateByUrl('/login')
+    },
+    (error)=> {
+      this.msg=error?.error?.errors[0]?.message
+    }
+   ) 
     
-    this.http.post("http://localhost:3000/api/v1",formData).subscribe((response:any)=>{
-       if(response.data){
-        this.userData=response.data
-        console.log(this.userData);
-        this.toaster.success("user registered successfully","success")
-       }
-      //  this.router.navigate(['/profile',this.userData._id])
-      this.router.navigateByUrl('/login')
-     },
-     (error)=> {
-       this.msg=error?.error?.errors[0]?.message
-     }
-    ) 
    }
 }

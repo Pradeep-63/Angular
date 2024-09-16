@@ -1,9 +1,12 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
+import { UserService } from '../../services/users/user.service';
+
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -11,16 +14,21 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit{
   user={
     email:'',
     password:'',
    }
 
-  constructor(private http:HttpClient,private toaster:ToastrService){
+  constructor(private http:HttpClient,private toaster:ToastrService,private router:Router, private cookieService: CookieService,private login:UserService){
   }
-
-  public onSave(newform:NgForm){
+ ngOnInit(): void {
+   const token=this.cookieService.get('token')
+   if(token){
+    this.router.navigate(['/dashboard'])
+   }
+ }
+  public onLogin(newform:NgForm){
     if(newform.invalid){
       Object.keys(newform.controls).forEach(field => {
         const control = newform.control.get(field);
@@ -28,16 +36,22 @@ export class LoginComponent {
       });
       return;
     }
-      this.http.post("http://localhost:3000/api/v1/login",this.user).subscribe((res:any)=>{
-          if(res.token){
-             this.toaster.success("user login succesfully",'Success')
-          }
-      },
-      (err)=>{
-       this.toaster.error("Email or Password is incorrect",'Error')
-      }
-    )
-    }
-    
+    this.login.getLogin(this.user).subscribe((res:any)=>{
+            if(res.token){
+             this.cookieService.set('token', res.token);
+
+              this.login.getUserDetails();
+               this.toaster.success("user login succesfully",'Success')
+               this.router.navigateByUrl('/dashboard')
+            }
+            this.router.navigateByUrl('/dashboard')
+        },
+        (err)=>{
+         this.toaster.error("Email or Password is incorrect",'Error')
+        }
+      )
+   
+
+    }  
 
 }

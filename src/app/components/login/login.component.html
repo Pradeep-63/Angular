@@ -5,7 +5,7 @@
     <div class="text-center mt-4 name">
         Login form
     </div>
-    <form class="p-3 mt-3" #newForm="ngForm" (ngSubmit)="onSave(newForm)" novalidate>
+    <form class="p-3 mt-3" #newForm="ngForm" (ngSubmit)="onLogin(newForm)" novalidate>
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
             <input type="email" id="email" [(ngModel)]="user.email" name="email" placeholder="Enter your Email"
