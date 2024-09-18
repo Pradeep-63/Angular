@@ -13,7 +13,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
    avatarSrc: string = 'https://epichcl.com/public/images/doctors/Dr-Jishu-Deb-Nath1723273750.jpg';
-  url:string='http://localhost:3000/'
+   url:string='http://localhost:3000/'
   
   profile:any={
      name:'',

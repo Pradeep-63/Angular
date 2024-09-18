@@ -17,9 +17,14 @@ export class AppComponent implements OnInit {
      }
 
      ngOnInit(): void {
-      const token=this.cookieService.get('token')
-      if(token){
-        this.userService.getUserDetails()
+      const id=this.cookieService.get('id')
+      if(id){
+        this.userService.getUserById(id).subscribe((res:any)=>{
+          if(res.data){
+            this.userService.userDetails$.next(res.data)
+          }
+          
+        })
       }
      
      }

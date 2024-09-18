@@ -17,7 +17,7 @@ import { UserService } from '../../services/users/user.service';
 export class LoginComponent implements OnInit{
   user={
     email:'',
-    password:'',
+    password:''
    }
 
   constructor(private http:HttpClient,private toaster:ToastrService,private router:Router, private cookieService: CookieService,private login:UserService){
@@ -36,11 +36,17 @@ export class LoginComponent implements OnInit{
       });
       return;
     }
-    this.login.getLogin(this.user).subscribe((res:any)=>{
-            if(res.token){
-             this.cookieService.set('token', res.token);
-
-              this.login.getUserDetails();
+    this.login.userLogin(this.user).subscribe((res:any)=>{
+          
+      if(res.token && res.id){
+      
+             this.cookieService.set('token',res.token);
+             this.cookieService.set('id',res.id)
+              this.login.getUserById(res.id).subscribe((res:any)=>{
+               if(res.data){
+                this.login.userDetails$.next(res.data)
+               }
+              })
                this.toaster.success("user login succesfully",'Success')
                this.router.navigateByUrl('/dashboard')
             }

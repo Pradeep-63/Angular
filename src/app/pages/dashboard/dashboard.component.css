@@ -1,4 +1,4 @@
-/* Main CSS Here */
+
 
 @import url(
 "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -494,4 +494,26 @@ header {
       width: 180px;
     }
   }
-  
+  /* button */
+  .btn{
+    padding: 10px 26px;
+    margin: 0px 10px;
+    border-radius: 15px;
+  }
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0px auto;
+    
+  }
+ .position{
+  display: flex;
+  justify-content: center;
+ }
+ .action-image{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+ }

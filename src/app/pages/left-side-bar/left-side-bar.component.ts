@@ -15,6 +15,7 @@ export class LeftSideBarComponent {
   logout(){
     if(confirm("are you sure you want to logout")){
       this.cookieService.delete('token')
+      this.cookieService.delete('id')
       this.router.navigate(['/login']);
     }
    

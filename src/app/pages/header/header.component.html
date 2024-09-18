@@ -28,8 +28,16 @@
              class="icn" 
              alt="">
              <!-- image dropdown -->
-        <div class="dp">
-          <img [src]='profile' class="dpicn "  alt="dp">
+        
+
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img [src]='profile' class="dpicn "  alt="dp">
+          </button>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" >{{userData.email}}</a></li>
+            <li><a class="dropdown-item">LOGOUT</a></li>
+          </ul>
         </div>
        
           

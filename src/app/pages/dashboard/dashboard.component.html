@@ -106,7 +106,7 @@
             </nav>
         </div> -->
         <!-- main content -->
-        <div class="main">
+        <!-- <div class="main">
 
             <div class="searchbar2">
                 <input type="text" 
@@ -248,8 +248,63 @@
                     </div>
                 </div>
             </div>
+        </div> -->
+       
+        <!-- all users details -->
+        <div class="container">
+            <table class="table " style="background-color: aliceblue;">
+                <thead style="background-color: gray;">
+                    <tr class="text-center bg-gray" >
+                      <th scope="col">Sr No</th>
+                      <th scope="col">Name</th>
+                      <th scope="col">Email</th>
+                      <th scope="col">FatherName</th>
+                      <th scope="col">Role</th>
+                      <th scope="col">Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let user of allUserDetails,let i=index" class="text-center">
+                        <th scope="col">{{ i + 1 + (page - 1) * limit }}</th>
+                        <th scope="col">{{user.name}}</th>
+                        <th scope="col">{{user.email}}</th>
+                        <th scope="col">{{user.fatherName}}</th>
+                        <th scope="col">{{user.role}}</th>
+                        <th scope="col">
+                           <div class="action-image">
+                            <div class="bg-warning">
+                              <img src="/assets/images/edit-button.png" alt="" width="30px" height="30px">
+                            </div>
+                             <div class="bg-danger">
+                               <img src="/assets/images/garbage_5697903.png" alt="" width="30px" height="30px">
+                             </div>
+                             
+                           </div>
+                        </th> 
+                    </tr>
+                  </tbody>
+            </table>
+            
         </div>
         
     </div>
+    <nav aria-label="Page navigation example" class="">
+        <ul class="pagination justify-content-center">
+          <li style="z-index: 999;" class="page-item mx-1" [class.disabled]="page==1" >
+            <a class="page-link"  aria-label="Previous" style="padding: 2px 13px;" (click)="getPage(page - 1)">
+              <span aria-hidden="true" >&laquo;</span>
+            </a>
+          </li>
+          <li style="z-index: 999;" *ngFor="let p of pagesArray" class="page-item mx-1" [class.active]="p == page"  >
+            <a class="page-link" style="padding: 2px 13px;" (click)="getPage(p)">{{ p }}</a>
+          </li>
+          <li style="z-index: 999;" class="page-item mx-1" [class.disabled]="page==totalPages">
+            <a class="page-link"  aria-label="Next" (click)="getPage(+page + 1)" style="padding: 2px 13px;">
+              <span aria-hidden="true" >&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      
 </div>
 

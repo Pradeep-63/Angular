@@ -1,4 +1,6 @@
 export const apiRoutes = {
     LOGIN: '/login',
-    TOKEN_VERIFY:'/users/verifyToken'
+    USER_VERIFY:'/users/verifyUser',
+    USERS:'/users',
+    GETALLUSERS:'/usersData'
 }
