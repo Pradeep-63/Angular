@@ -36,4 +36,12 @@ export class UserService {
   getAllUsers(params: HttpParams){
     return this.http.get<any>(`${environment.baseURL}${apiRoutes.GETALLUSERS}`,{params})
   }
+  // delete userby id
+  deleteUserById(id:number){
+    return this.http.delete(`${environment.baseURL}${apiRoutes.USERS}/${id}`)
+  }
+  //update userby Id
+  updateUserById(id:number,updatedData:any){
+    return this.http.post(`${environment.baseURL}/${apiRoutes.USERS}/${id}`,updatedData)
+  }
 }

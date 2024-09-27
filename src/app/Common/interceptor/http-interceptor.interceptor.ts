@@ -3,18 +3,24 @@ import { inject } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { catchError, map, throwError } from 'rxjs';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 export const httpInterceptorInterceptor: HttpInterceptorFn = (req, next) => {
   const publicRoutes = ["login"]
   const cookieService=inject(CookieService)
   const router=inject(Router)
-  const authToken = cookieService.get('token');  
+  const spinner=inject(NgxSpinnerService)
+  const authToken = cookieService.get('token'); 
+
   const isPublicRoute = publicRoutes.some(route => req.url.includes(route));
+  spinner.show()
   if(isPublicRoute){
     return next(req).pipe(
       map(res => {
+       spinner.hide()
         return res
       }),
       catchError((error: HttpErrorResponse) => {
+        spinner.hide()
         console.error('Error occurred:', error);
         if (error.status === 404) {
           console.log("users not found");
@@ -35,8 +41,12 @@ export const httpInterceptorInterceptor: HttpInterceptorFn = (req, next) => {
   
   return next(authReq).pipe(
     map(res => {
-      return res
+      setTimeout(()=>{
+        spinner.hide()
+      },1000)
+      return res 
     }),
+    
     catchError((error: HttpErrorResponse) => {
       console.error('Error occurred:', error);
       if (error.status === 401) {

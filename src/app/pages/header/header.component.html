@@ -19,8 +19,7 @@
                 class="icn srchicn" 
                 alt="search-icon">
           </div>
-    </div>
-    <div>{{userData.email}}</div>
+        </div>
     <div class="message">
         <div class="circle"></div>
         <img src=
@@ -31,12 +30,12 @@
         
 
         <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <img [src]='profile' class="dpicn "  alt="dp">
+          <button class="btn btn-secondary " type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 50%;">
+            <img [src]='profile' class="dpicn "  alt="dp" style="border-radius: 50%;">
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu" style="padding: 5px 10px">
             <li><a class="dropdown-item" >{{userData.email}}</a></li>
-            <li><a class="dropdown-item">LOGOUT</a></li>
+            <li><a class="dropdown-item"> <img src="/assets/images/right-from-bracket-solid (2).svg" alt="" height="20px" width="20px">  LOGOUT</a></li>
           </ul>
         </div>
        

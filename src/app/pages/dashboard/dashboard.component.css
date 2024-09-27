@@ -4,7 +4,7 @@
 "https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
-  margin: 0;
+  
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
@@ -506,6 +506,10 @@ header {
     align-items: center;
     width: 100%;
     margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    align-items: flex-start;
     
   }
  .position{
@@ -517,3 +521,55 @@ header {
   justify-content: center;
   gap: 10px;
  }
+button{
+  border: none;
+}
+/*edit modal */
+.modal {
+  position: absolute;
+  
+}
+
+.modal-dialog {
+  max-width: 600px; /* Optional: Set a max width for the modal */
+  width: 100%; /* Ensure it takes full width on smaller screens */
+}
+
+.modal-content {
+  padding: 20px; /* Optional: Add some padding inside the modal */
+}
+.modal-title {
+           font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #007bff;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004a9e;
+        }
+ /* delete modal */
+ 

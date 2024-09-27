@@ -4,6 +4,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ReactiveformComponent } from './components/reactiveform/reactiveform.component';
 import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './Common/authGuard/auth.guard';
+import { ModalComponent } from './components/modal/modal.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,11 @@ export const routes: Routes = [
         component:LoginComponent
     },
     {
+        path: 'dashboard/:id',
+        component: ModalComponent,
+        canActivate: [authGuard]
+      },
+    {
         path:'profile/:id',
         component:DashboardComponent
     },
@@ -32,6 +38,8 @@ export const routes: Routes = [
     {
         path:'dashboard',
         component:DashboardComponent,
-        canActivate:[authGuard]
+        canActivate:[authGuard],
+        
     }
+    
 ];

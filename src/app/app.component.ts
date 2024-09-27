@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ReactiveformComponent } from './components/reactiveform/reactiveform.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -9,13 +9,14 @@ import { CookieService } from 'ngx-cookie-service';
   standalone: true,
   imports: [RouterOutlet,ReactiveformComponent,DashboardComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+  
 })
 export class AppComponent implements OnInit {
      constructor(private userService: UserService,private cookieService:CookieService ) {
        
      }
-
+    title:string=''
      ngOnInit(): void {
       const id=this.cookieService.get('id')
       if(id){
